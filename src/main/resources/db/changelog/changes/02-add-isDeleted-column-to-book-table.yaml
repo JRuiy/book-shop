@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-isDeleted-column-to-book-table
+      author: Vadym
+      changes:
+        - addColumn:
+            tableName: books
+            columns:
+              - column:
+                  name: is_deleted
+                  type: BIT(1)
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
