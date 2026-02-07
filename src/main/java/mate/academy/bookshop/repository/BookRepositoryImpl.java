@@ -2,6 +2,7 @@ package mate.academy.bookshop.repository;
 
 import java.util.List;
 import java.util.Optional;
+import mate.academy.bookshop.exception.DataProcessingException;
 import mate.academy.bookshop.model.Book;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -32,7 +33,7 @@ public class BookRepositoryImpl implements BookRepository {
             if (transaction != null) {
                 transaction.rollback();
             }
-            throw new RuntimeException(String.format("Can't save book %s db", book), e);
+            throw new DataProcessingException(String.format("Can't save book %s db", book), e);
         } finally {
             if (session != null) {
                 session.close();
@@ -46,7 +47,7 @@ public class BookRepositoryImpl implements BookRepository {
         try (Session session = sessionFactory.openSession()) {
             return session.createQuery("from Book", Book.class).list();
         } catch (Exception e) {
-            throw new RuntimeException("Can't pull all books %s db", e);
+            throw new DataProcessingException("Can't pull all books from db", e);
         }
     }
 
@@ -55,6 +56,8 @@ public class BookRepositoryImpl implements BookRepository {
         try (Session session = sessionFactory.openSession()) {
             Book book = session.find(Book.class, id);
             return Optional.ofNullable(book);
+        } catch (Exception e) {
+            throw new DataProcessingException("Can't pull books with id %s".formatted(id), e);
         }
     }
 }
