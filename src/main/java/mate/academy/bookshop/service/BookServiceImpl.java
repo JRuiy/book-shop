@@ -11,7 +11,6 @@ import mate.academy.bookshop.mapper.BookMapper;
 import mate.academy.bookshop.model.Book;
 import mate.academy.bookshop.repository.BookRepository;
 import mate.academy.bookshop.repository.BookSpecificationBuilder;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
