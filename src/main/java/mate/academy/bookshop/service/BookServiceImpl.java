@@ -9,8 +9,8 @@ import mate.academy.bookshop.dto.UpdateBookRequestDto;
 import mate.academy.bookshop.exception.EntityNotFoundException;
 import mate.academy.bookshop.mapper.BookMapper;
 import mate.academy.bookshop.model.Book;
-import mate.academy.bookshop.repository.BookRepository;
-import mate.academy.bookshop.repository.BookSpecificationBuilder;
+import mate.academy.bookshop.repository.book.BookRepository;
+import mate.academy.bookshop.repository.book.BookSpecificationBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

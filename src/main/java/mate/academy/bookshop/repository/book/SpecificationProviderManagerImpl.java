@@ -1,9 +1,10 @@
-package mate.academy.bookshop.repository;
+package mate.academy.bookshop.repository.book;
 
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import mate.academy.bookshop.model.Book;
-import mate.academy.bookshop.repository.book.SearchParam;
+import mate.academy.bookshop.repository.SpecificationProvider;
+import mate.academy.bookshop.repository.SpecificationProviderManager;
 import org.springframework.stereotype.Component;
 
 @Component

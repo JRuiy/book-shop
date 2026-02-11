@@ -1,9 +1,10 @@
-package mate.academy.bookshop.repository;
+package mate.academy.bookshop.repository.book;
 
 import lombok.RequiredArgsConstructor;
 import mate.academy.bookshop.dto.BookSearchParameters;
 import mate.academy.bookshop.model.Book;
-import mate.academy.bookshop.repository.book.SearchParam;
+import mate.academy.bookshop.repository.SpecificationBuilder;
+import mate.academy.bookshop.repository.SpecificationProviderManager;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 

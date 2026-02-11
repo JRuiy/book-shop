@@ -9,12 +9,14 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class AuthorSpecificationProvider implements SpecificationProvider<Book> {
+    private static final String AUTHOR_COLUMN = "author";
+
     @Override
     public Specification<Book> getSpecification(String[] params) {
         return (root, query, criteriaBuilder)
                 -> criteriaBuilder.or(Arrays.stream(params)
                 .map(param -> criteriaBuilder
-                        .like(criteriaBuilder.lower(root.get("author")),
+                        .like(criteriaBuilder.lower(root.get(AUTHOR_COLUMN)),
                                 "%" + param.toLowerCase() + "%"))
                 .toList());
     }
