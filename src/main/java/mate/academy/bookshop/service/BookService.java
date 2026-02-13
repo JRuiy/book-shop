@@ -4,7 +4,6 @@ import java.util.List;
 import mate.academy.bookshop.dto.BookDto;
 import mate.academy.bookshop.dto.BookSearchParameters;
 import mate.academy.bookshop.dto.CreateBookRequestDto;
-import mate.academy.bookshop.dto.UpdateBookRequestDto;
 
 public interface BookService {
     BookDto save(CreateBookRequestDto book);
@@ -13,7 +12,7 @@ public interface BookService {
 
     BookDto findById(Long id);
 
-    BookDto update(Long id, UpdateBookRequestDto book);
+    BookDto update(Long id, CreateBookRequestDto book);
 
     void deleteById(Long id);
 

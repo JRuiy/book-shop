@@ -1,9 +1,0 @@
-databaseChangeLog:
-  - changeSet:
-      id: 03-modify-price-type
-      author: Vadym
-      changes:
-        - modifyDataType:
-            tableName: books
-            columnName: price
-            newDataType: decimal(10,2)
